@@ -13,7 +13,7 @@ Alihan SARAC's standard library repository for cpp
 + [ ] Assert
 + [ ] Logger
 + [ ] Date( tm )
-+ [ ] String
++ [x] String
 + [ ] Error
 + [ ] Strucks
   + [ ] Linked List
@@ -22,6 +22,7 @@ Alihan SARAC's standard library repository for cpp
   + [ ] Queue
 + [ ] CMake example and module
 + [ ] Variant type
++ [ ] Event Listener
 
 ## Contributing
 `// TODO`
