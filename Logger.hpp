@@ -21,4 +21,16 @@ void LOG(std::string message, Param const &...values) {
 
 void DEBUG(string message) { cout << message << endl; }
 
-#define ERROR(m) cout<< "[ERROR] "<<m<<"\n"<<__func__ <<":"<<__LINE__<< " at "<<__FILE__<<"\n"
+#define ERROR(m) cerr<< "[ ERROR ]: "<<m<<"\n"<<__func__ <<":"<<__LINE__<< " at "<<__FILE__<<"\n";
+
+#ifdef ASSTD_TODO
+    #define TODO(message) cout<< "[ TODO ]: "<< message << " at "  __FILE__<<"/"<< __func__ << "():" << __LINE__ << "\n";
+#else
+    #define TODO(message)
+#endif
+
+#ifdef ASSTD_FIXME
+    #define FIXME(message) cout<< "[ FIXME ]: "<< message << " at "  __FILE__<<"/"<< __func__ << "():" << __LINE__ << "\n";
+#else
+    #define FIXME(message)
+#endif
