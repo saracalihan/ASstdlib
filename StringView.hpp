@@ -35,6 +35,10 @@ public:
     return m_data.find(c, start);
   }
 
+  int find(StringView c, int start) {
+    return m_data.find(c.to_string(), start);
+  }
+
   template <typename T> int find(T c) { return find(c, 0); }
 
   StringView substr(int start, int step) {
@@ -120,7 +124,7 @@ public:
       index = find(c, start);
       StringView s = substr(start, index - start);
       list.push_back(s);
-      start = index+1;
+      start = index + 1;
     }
     // if chatacter doesnt found add all text else add last part of string.
     list.push_back(substr(start, length() - start));
