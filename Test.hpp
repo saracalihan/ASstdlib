@@ -12,7 +12,7 @@ inline int groupCount = 0, testCount = 0, passedTest = 0, failedTest = 0;
   {                                                                            \
     groupCount = 0, testCount = 0, passedTest = 0, failedTest = 0;             \
     [] body();                                                                 \
-    printf("\nTests: %d passed, %d failed, %d total\nGroups: %d\n%s\n\n",      \
+    printf("\nTests: \x1B[32m%d passed\033[0m, \x1B[31m%d failed\033[0m, %d total\nGroups: %d\n%s\n\n",      \
            passedTest, failedTest, testCount, groupCount, __FILE__);           \
     if (ASSTDLIB_EXIT_WHEN_TEST_FAIL && failedTest != 0)                       \
       exit(1);                                                                 \
