@@ -20,7 +20,7 @@ Alihan SARAC's standard library repository for cpp
   + [ ] Dubly Linked List
   + [ ] Stack
   + [ ] Queue
-  + [ ] Vector
+  + [x] Vector
 + [ ] CMake example and module
 + [ ] Variant type
 + [ ] Event Listener
