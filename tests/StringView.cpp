@@ -1,6 +1,15 @@
+/*
+ * Copyright (c) 2023, Alihan SARAÇ <saracalihan@gmail.com>
+ *
+ * This file is under the "MIT" license. Please read "LICENSE" file for more detail.
+ */
+
 #include "../Test.hpp"
 #include "../StringView.hpp"
 #include <exception>
+
+using namespace ASstdlib;
+
 int main(){
 
 Tests({

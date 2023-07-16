@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2023, Alihan SARAÇ <saracalihan@gmail.com>
+ *
+ * This file is under the "MIT" license. Please read "LICENSE" file for more detail.
+ */
+
 #ifndef VARG_HEADER
 #define VARG_HEADER
 

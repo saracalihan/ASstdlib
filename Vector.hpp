@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2023, Alihan SARAÇ <saracalihan@gmail.com>
+ *
+ * This file is under the "MIT" license. Please read "LICENSE" file for more detail.
+ */
+
 #pragma once
 #include "Assertions.hpp"
 #include "Logger.hpp"
@@ -15,6 +21,8 @@
 */
 #define ITARATOR_T void
 #define VECTOR_IMPL_TYPE(T) std::vector<T>
+
+namespace ASstdlib {
 
 FIXME("vector_size default should be changeable")
 template <typename T, unsigned int vector_size = ASSTDLIB_DEFAULT_VECTOR_SIZE>
@@ -79,7 +87,9 @@ public:
 
     return true;
   }
-  bool operator!=(Vector<T, vector_size> &other) { return !(*this == other);}
+  bool operator!=(Vector<T, vector_size> &other) { return !(*this == other); }
   bool operator=(const Vector<T, vector_size> &other) { NOT_IMPLEMENTED; }
   T operator[](SIZE_T index) { return at(index); }
 };
+
+} // namespace ASstdlib

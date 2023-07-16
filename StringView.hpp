@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2023, Alihan SARAÇ <saracalihan@gmail.com>
+ *
+ * This file is under the "MIT" license. Please read "LICENSE" file for more detail.
+ */
+
 #pragma once
 #include <cctype>
 #include <cstdlib>
@@ -8,6 +14,7 @@
 #include <string>
 
 using namespace std;
+namespace ASstdlib {
 
 class StringView {
 private:
@@ -191,3 +198,4 @@ public:
     return !(s == t);
   }
 };
+} // namespace ASstdlib

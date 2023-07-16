@@ -1,6 +1,14 @@
+/*
+ * Copyright (c) 2023, Alihan SARAÇ <saracalihan@gmail.com>
+ *
+ * This file is under the "MIT" license. Please read "LICENSE" file for more detail.
+ */
+
 #include "../Vector.hpp"
 #include "../Test.hpp"
 #include <exception>
+
+using namespace ASstdlib;
 
 #define Vector1 Vector<int, 300>
 

@@ -1,8 +1,17 @@
+/*
+ * Copyright (c) 2023, Alihan SARAÇ <saracalihan@gmail.com>
+ *
+ * This file is under the "MIT" license. Please read "LICENSE" file for more detail.
+ */
+
 #ifndef VARIANT_HEADER
 #define VARIANT_HEADER
 
 #include <cstdlib>
 #include <cstring>
+
+namespace ASstdlib {
+
 enum VARIANT_DATA_TYPES {
   NULL_TYPE,
   VOID_TYPE,
@@ -18,7 +27,7 @@ enum VARIANT_DATA_TYPES {
 };
 
 char *variant_type_to_string(VARIANT_DATA_TYPES t) {
-  char *name = (char*)malloc(sizeof(char) * 25);
+  char *name = (char *)malloc(sizeof(char) * 25);
   memset(name, 0, 25);
 
   switch (t) {
@@ -44,10 +53,10 @@ char *variant_type_to_string(VARIANT_DATA_TYPES t) {
     strncpy(name, "unsigned intager", 16);
     break;
   case FLOAT_TYPE:
-      strncpy(name, "float", 5);
+    strncpy(name, "float", 5);
     break;
   case DOUBLE_TYPE:
-      strncpy(name, "double", 6);
+    strncpy(name, "double", 6);
     break;
   }
   return name;
@@ -70,3 +79,4 @@ struct S_VariantData {
 typedef S_VariantData VariantData;
 
 #endif
+}
