@@ -1,9 +1,12 @@
+FLAGS= -D ASSTD_TODO -D ASSTD_FIXME
+TEST_FILES= StringView Vector
 all: compile run
+
 compile:
-	g++ test.cpp
+	g++ test.cpp $(FLAGS)
 run: 
 	./a.out
 test:
 	echo "Test cases  running"
-	g++ tests/StringView.cpp -std=gnu++17 -Wno-write-strings
+	g++ tests/Vector.cpp -std=gnu++17 -Wno-write-strings
 	./a.out
