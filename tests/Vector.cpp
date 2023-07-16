@@ -155,6 +155,95 @@ int main() {
         return v.size() == 2 && v.at(0) == 10 && v.at(1) == 40;
       });
     });
+    Describe("OPERATORS", {
+      Test("== operator return true when vectors have same data and order", {
+        Vector<int> v1;
+        Vector<int> v2;
+
+        v1.push(1);
+        v1.push(2);
+        v1.push(3);
+        v1.push(4);
+
+        v2.push(1);
+        v2.push(2);
+        v2.push(3);
+        v2.push(4);
+
+        return v1 == v2;
+      });
+      Test("== operator return false when vectors have not same data or order",
+           {
+             Vector<int> v1;
+             Vector<int> v2;
+
+             v1.push(1);
+             v1.push(2);
+             v1.push(4);
+
+             v2.push(1);
+             v2.push(2);
+             v2.push(3);
+             v2.push(4);
+
+             return !(v1 == v2);
+           });
+      Test("!= operator return false when vectors have same data and order", {
+        Vector<int> v1;
+        Vector<int> v2;
+
+        v1.push(1);
+        v1.push(2);
+        v1.push(3);
+        v1.push(4);
+
+        v2.push(1);
+        v2.push(2);
+        v2.push(3);
+        v2.push(4);
+
+        return !(v1 != v2);
+      });
+      Test("!= operator return true when vectors have not same data and order",
+           {
+             Vector<int> v1;
+             Vector<int> v2;
+
+             v1.push(1);
+             v1.push(4);
+
+             v2.push(1);
+             v2.push(2);
+             v2.push(3);
+             v2.push(4);
+
+             return v1 != v2;
+           });
+    });
+    Test("[] operator return value when index is not empty", {
+      Vector<int> v1;
+
+      v1.push(1);
+      v1.push(4);
+      v1.push(3);
+      return v1[1] == 4;
+    });
+
+    Test("[] operator throw exception when index is incorrect", {
+      Vector<int> v1;
+
+      v1.push(1);
+      v1.push(4);
+      v1.push(3);
+
+      bool isCatched = false;
+      try {
+        v1[25];
+      } catch (exception) {
+        isCatched = true;
+      }
+      return isCatched;
+    });
   });
   return 0;
 }

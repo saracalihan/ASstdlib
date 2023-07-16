@@ -1,5 +1,7 @@
 #pragma once
+#include "Assertions.hpp"
 #include "Logger.hpp"
+#include <exception>
 #include <stdexcept>
 #include <type_traits>
 #include <vector>
@@ -14,7 +16,7 @@
 #define ITARATOR_T void
 #define VECTOR_IMPL_TYPE(T) std::vector<T>
 
-TODO("vector_size default ")
+FIXME("vector_size default should be changeable")
 template <typename T, unsigned int vector_size = ASSTDLIB_DEFAULT_VECTOR_SIZE>
 class Vector {
 private:
@@ -64,8 +66,20 @@ public:
   }
   void resize(SIZE_T size) { return m_data.resize(size); }
   void swap(Vector<T, vector_size> other) { return m_data.swap(other); }
-  bool operator==(const Vector<T, vector_size> &other) {}
-  bool operator!=(const Vector<T, vector_size> &other) {}
-  bool operator=(const Vector<T, vector_size> &other) {}
+  bool operator==(Vector<T, vector_size> &other) {
+    try {
+      for (SIZE_T i = 0; i < other.size(); i++) {
+        if (at(i) != other.at(i)) {
+          return false;
+        }
+      }
+    } catch (exception) {
+      return false;
+    }
+
+    return true;
+  }
+  bool operator!=(Vector<T, vector_size> &other) { return !(*this == other);}
+  bool operator=(const Vector<T, vector_size> &other) { NOT_IMPLEMENTED; }
   T operator[](SIZE_T index) { return at(index); }
 };
