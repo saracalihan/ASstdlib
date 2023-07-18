@@ -7,6 +7,7 @@
 
 #include "../StringView.hpp"
 #include "../Test.hpp"
+#include "../Logger.hpp"
 #include <exception>
 
 using namespace ASstdlib;
@@ -111,6 +112,22 @@ int main() {
       Test("client should get -1 when string dont match after start index", {
         StringView s = StringView("hello world! ");
         return s.indexOf('e', 5) == -1;
+      });
+    });
+
+    Describe("Operators", {
+      Test("* operator is concat string given times then return it",{
+        StringView s = StringView("a ");
+        return s * 3 == "a a a ";
+      });
+      Test("* operator should return '' when paramater is 0",{
+        StringView s = StringView("a ");
+        return s * 0 == "";
+      });
+      Test("*= operator is multiply string given times then assagin itself",{
+        StringView s = StringView("a ");
+        s *=3;
+        return s== "a a a ";
       });
     });
   });

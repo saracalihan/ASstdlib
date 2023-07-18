@@ -1,7 +1,8 @@
 /*
  * Copyright (c) 2023, Alihan SARAÇ <saracalihan@gmail.com>
  *
- * This file is under the "MIT" license. Please read "LICENSE" file for more detail.
+ * This file is under the "MIT" license. Please read "LICENSE" file for more
+ * detail.
  */
 
 #pragma once
@@ -151,6 +152,18 @@ public:
   friend string operator+(StringView &s, char const &s2) {
     return s.m_data + s2;
   }
+
+  friend string operator*(StringView &s, int v) {
+    if (v < 0) {
+      return "";
+    }
+
+    string d = "";
+    for (int i = 0; i < v; i++) {
+      d += s.m_data;
+    }
+    return d;
+  }
   StringView operator+(StringView const &s) {
     return StringView(m_data + s.m_data);
   }
@@ -173,8 +186,14 @@ public:
     m_data += v;
     return *this;
   }
+
   StringView &operator+=(StringView const &v) {
     m_data += v.m_data;
+    return *this;
+  }
+
+  StringView &operator*=(int v) {
+    this->m_data = (*this) * v;
     return *this;
   }
 
