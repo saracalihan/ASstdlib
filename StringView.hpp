@@ -38,15 +38,15 @@ public:
   StringView erases(int start, int step) {
     return StringView(m_data.erase(start, step));
   }
-  template <typename T> int find(T c, int start) {
+  template <typename T> int indexOf(T c, int start) {
     return m_data.find(c, start);
   }
 
-  int find(StringView c, int start) {
+  int indexOf(StringView c, int start) {
     return m_data.find(c.to_string(), start);
   }
 
-  template <typename T> int find(T c) { return find(c, 0); }
+  template <typename T> int indexOf(T c) { return indexOf(c, 0); }
 
   StringView substr(int start, int step) {
     return StringView(m_data.substr(start, step));
@@ -127,8 +127,8 @@ public:
   list<StringView> parse(char c) {
     list<StringView> list = {};
     int start = 0, index = 0;
-    while (find(c, start) != -1) {
-      index = find(c, start);
+    while (indexOf(c, start) != -1) {
+      index = indexOf(c, start);
       StringView s = substr(start, index - start);
       list.push_back(s);
       start = index + 1;
