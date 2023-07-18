@@ -8,5 +8,5 @@ run:
 	./a.out
 test:
 	echo "Test cases  running"
-	g++ tests/Vector.cpp -std=gnu++17 -Wno-write-strings
+	g++ tests/LinkedList.cpp -std=gnu++17 -Wno-write-strings
 	./a.out
