@@ -16,7 +16,7 @@ Alihan SARAC's standard library repository for cpp
 + [x] String
 + [ ] Error
 + [ ] Strucks
-  + [ ] Linked List
+  + [x] Linked List
   + [ ] Dubly Linked List
   + [ ] Stack
   + [ ] Queue
@@ -24,7 +24,20 @@ Alihan SARAC's standard library repository for cpp
 + [ ] CMake example and module
 + [ ] Variant type
 + [ ] Event Listener
-
++ [ ] Networks
+  + [ ] TCP
+    + [ ] Server
+    + [ ] Client
+  + [ ] HTTP
+    + [ ] Client
+    + [ ] Server
+  + [ ] UDP
+    + [ ] Server
+    + [ ] Client
+  + [ ] WebSocket
+    + [ ] Server
+    + [ ] Client   
+  + [ ] MultiThread
 ## Contributing
 `// TODO`
 
