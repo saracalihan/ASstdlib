@@ -11,7 +11,7 @@ Alihan SARAC's standard library repository for cpp
 
 ### Todos:
 + [ ] Assert
-+ [ ] Logger
++ [x] Logger
 + [ ] Date( tm )
 + [x] String
 + [ ] Error
@@ -36,8 +36,9 @@ Alihan SARAC's standard library repository for cpp
     + [ ] Client
   + [ ] WebSocket
     + [ ] Server
-    + [ ] Client   
-  + [ ] MultiThread
+    + [ ] Client
++ [ ] MultiThread
+
 ## Contributing
 `// TODO`
 
