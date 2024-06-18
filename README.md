@@ -18,11 +18,13 @@ Alihan SARAC's standard library repository for cpp
 + [ ] Strucks
   + [x] Linked List
   + [ ] Dubly Linked List
-  + [ ] Stack
+  + [x] Stack
   + [ ] Queue
   + [x] Vector
+  + [ ] MRU/LRU
++ [ ] Hash Table
 + [ ] CMake example and module
-+ [ ] Variant type
++ [x] Variant type
 + [ ] Event Listener
 + [ ] Networks
   + [ ] TCP
