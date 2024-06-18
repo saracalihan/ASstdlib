@@ -12,7 +12,7 @@ Alihan SARAC's standard library repository for cpp
 ### Todos:
 + [ ] Assert
 + [x] Logger
-+ [ ] Date( tm )
++ [x] Date
 + [x] String
 + [ ] Error
 + [ ] Strucks
