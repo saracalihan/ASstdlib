@@ -20,12 +20,12 @@ Alihan SARAC's standard library repository for cpp
   + [ ] Dubly Linked List
   + [x] Stack
   + [ ] Queue
-  + [x] Vector
+  + [x] Vector / Dynamic Array
   + [ ] MRU/LRU
-+ [ ] Hash Table
-+ [ ] CMake example and module
++ [x] Hash Table
 + [x] Variant type
 + [ ] Event Listener
++ [ ] CMake example and module
 + [ ] Networks
   + [ ] TCP
     + [ ] Server
