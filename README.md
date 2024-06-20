@@ -21,8 +21,8 @@ Alihan SARAC's standard library repository for cpp
   + [x] Stack
   + [ ] Queue
   + [x] Vector / Dynamic Array
-  + [ ] MRU/LRU
 + [x] Hash Table
++ [x] Cache ( MRU/LRU )
 + [x] Variant type
 + [ ] Event Listener
 + [ ] CMake example and module

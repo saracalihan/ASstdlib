@@ -3,6 +3,7 @@
 
 #include "da.h"
 
+#define HASHTABLE_KEY_LENGTH 265
 typedef int hashtable_type;
 
 /*
@@ -21,8 +22,8 @@ typedef int hashtable_type;
 */
 
 typedef struct{
-    char key[VARIABLE_NAME_SIZE];
-    Variant value;
+    char key[HASHTABLE_KEY_LENGTH];
+    hashtable_type value;
 } Pair;
 
 // We use dynamic array, not linked list for support full CPU cache
@@ -41,6 +42,7 @@ typedef struct{
     HashTableNode *items;
     size_t count;
     size_t capacity;
+    size_t element_count;
 } HashTable;
 
 void hashtable_free(HashTable* table){
@@ -52,6 +54,7 @@ void hashtable_free(HashTable* table){
         }
     }
     free(table->items);
+    table->items=NULL;
 }
 
 HashTable hashtable_create(size_t size){
@@ -69,7 +72,7 @@ size_t hashtable_hash(const char* key){
     return hash;
 }
 
-size_t hashtable_add(HashTable *table, const char* key, Variant value){
+size_t hashtable_add(HashTable *table, const char* key, hashtable_type value){
     if(table->capacity < table->count +1 ){
         // realloc table then rehash all elements
         HashTable temp = hashtable_create(table->capacity *2);
@@ -105,6 +108,7 @@ size_t hashtable_add(HashTable *table, const char* key, Variant value){
     } else{
         DA_PUSH(table->items[hash].nexts, var);
     }
+    table->element_count++;
     return hash;
 }
 
@@ -123,17 +127,23 @@ Pair* hashtable_get(const HashTable *table, const char* key){
         }
         index++;
     }
-    printf("[HASH TABLE] Pair could not found! Key: '%s'\n", key);
-    exit(1);
+    return NULL;
 }
 
 void hashtable_delete(HashTable *table, const char* key){
     Pair *var = hashtable_get(table, key);
+    if(NULL == var){
+        return;
+    }
     memset(var, 0, sizeof(Pair));
+    table->element_count--;
 }
 
-void hashtable_set(HashTable *table, const char* key, const Variant value){
+void hashtable_set(HashTable *table, const char* key, const hashtable_type value){
     Pair* var = hashtable_get(table, key);
+    if(NULL == var){
+        return;
+    }
     memcpy(&var->value, &value, sizeof(value));
 }
 
